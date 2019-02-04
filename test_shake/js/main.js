@@ -55,7 +55,7 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 10, // optional shake strength threshold
+    threshold: 15, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
@@ -68,7 +68,7 @@ function listenToShake(){
 
 let myNumbers = [];
 
-function shakeEventDidOccur (data) {
+function shakeEventDidOccur() {
   let url = 'poems.json';
   fetch(url)
   .then(response => response.json())
