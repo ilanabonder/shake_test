@@ -11,9 +11,9 @@ let mobileCheck = false;
   }
 
 if (mobileCheck === true){
-    createHome();
+  createHome();
 }else{
-   $("body").append(" <p>this is a mobile experience only, to know more about the art of gogyōshi, please access to this webpage using your phone :) </p>");
+          $("body").append(" <p>this is a mobile experience only, to know more about the art of gogyōshi, please access to this webpage using your phone :) </p>");
 }
 
 function createHome(){
@@ -55,22 +55,21 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 100, // optional shake strength threshold
+    threshold: 80, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
 function listenToShake(){
   console.log('i am listening to the shake!')
   myShakeEvent.start()
-  window.addEventListener('shake', shakeEventDidOccur, false);
-  // shakeEventDidOccur();
+  // window.addEventListener('shake', shakeEventDidOccur, false);
+  shakeEventDidOccur();
 }
 
 let myNumbers = [];
 
-//function lL
-function shakeEventDidOccur() {
-  let url = 'poems.json';
+function shakeEventDidOccur () {
+  let url = '../poems.json';
   fetch(url)
   .then(response => response.json())
   .then(data => {
