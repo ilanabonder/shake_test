@@ -50,22 +50,37 @@ function typeWriter() {
 function shakePage(){
   $("h2, h1").remove();
   $("body").append("<img src='../img/touch/apple-touch-icon-144x144-precomposed.png' alt='Smiley face'><p>shake your phone to discover new  goyoshi poems</p>")
+
   listenToShake();
 }
 
 let myShakeEvent = new Shake({
-    threshold: 15, // optional shake strength threshold
+    threshold: 10, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
 function listenToShake(){
   console.log('i am listening to the shake!')
-  myShakeEvent.start();
+  myShakeEvent.start()
   window.addEventListener('shake', shakeEventDidOccur, false);
+  // shakeEventDidOccur();
 }
 
-function shakeEventDidOccur () {
-  $("img, p").remove();
-  $("body").append("<h1>our earth</h1><h2>We have some places where ugliness</br>rules,</br>but more places</br>where beauty rules</br></br>on this blue Earth</h2>")
-    //put your own code here etc.
+let myNumbers = [];
+
+function shakeEventDidOccur (data) {
+  let url = '../poems.json';
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    let number = Math.round(Math.random()*4);
+    if(myNumbers.includes(number)){
+      number = Math.round(Math.random()*4);
+    }else{
+      $("img, p").remove();
+      $("body").append("<h1>"+ data[number].title + "</h1><h2>"+data[number].text+"</h2><h3>"+data[number].author+"</h3>");
+      myNumbers.push(number);
+    }
+  });
 }
