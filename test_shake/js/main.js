@@ -55,7 +55,7 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 15, // optional shake strength threshold
+    threshold: 80, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
@@ -76,6 +76,9 @@ function shakeEventDidOccur () {
     console.log(data)
     let number = Math.round(Math.random()*data.length);
     if(myNumbers.includes(number)){
+      number = Math.round(Math.random()*data.length);
+    }if else(myNumbers.length === data.length){
+      myNumbers = 0;
       number = Math.round(Math.random()*data.length);
     }else{
       $("img, p, h1, h2, h3").remove();
