@@ -78,7 +78,7 @@ function shakeEventDidOccur() {
     if(myNumbers.includes(number)){
       number = Math.round(Math.random()*4);
     }else{
-      $("img, p").remove();
+      $("img, p, h1, h2, h3").remove();
       $("body").append("<h1>"+ data[number].title + "</h1><h2>"+data[number].text+"</h2><h3>"+data[number].author+"</h3>");
       myNumbers.push(number);
     }
