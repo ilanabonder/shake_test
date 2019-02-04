@@ -69,7 +69,7 @@ function listenToShake(){
 let myNumbers = [];
 
 function shakeEventDidOccur (data) {
-  let url = '../poems.json';
+  let url = 'poems.json';
   fetch(url)
   .then(response => response.json())
   .then(data => {
