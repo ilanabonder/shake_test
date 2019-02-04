@@ -55,7 +55,7 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 80 // optional shake strength threshold
+    threshold: 100 // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
