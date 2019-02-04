@@ -77,7 +77,7 @@ function shakeEventDidOccur () {
     let number = Math.round(Math.random()*data.length);
     if(myNumbers.includes(number)){
       number = Math.round(Math.random()*data.length);
-    }if else(myNumbers.length === data.length){
+    }else if(myNumbers.length === data.length){
       myNumbers = 0;
       number = Math.round(Math.random()*data.length);
     }else{
