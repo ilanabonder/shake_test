@@ -74,9 +74,9 @@ function shakeEventDidOccur() {
   .then(response => response.json())
   .then(data => {
     console.log(data)
-    let number = Math.round(Math.random()*4);
+    let number = Math.round(Math.random()*data.length);
     if(myNumbers.includes(number)){
-      number = Math.round(Math.random()*4);
+      number = Math.round(Math.random()*data.length);
     }else{
       $("img, p, h1, h2, h3").remove();
       $("body").append("<h1>"+ data[number].title + "</h1><h2>"+data[number].text+"</h2><h3>"+data[number].author+"</h3>");
