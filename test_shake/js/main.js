@@ -62,8 +62,8 @@ let myShakeEvent = new Shake({
 function listenToShake(){
   console.log('i am listening to the shake!')
   myShakeEvent.start()
-  // window.addEventListener('shake', shakeEventDidOccur, false);
-  shakeEventDidOccur();
+  window.addEventListener('shake', shakeEventDidOccur, false);
+//   shakeEventDidOccur();
 }
 
 let myNumbers = [];
