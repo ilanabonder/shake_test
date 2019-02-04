@@ -68,6 +68,7 @@ function listenToShake(){
 
 let myNumbers = [];
 
+//function lL
 function shakeEventDidOccur() {
   let url = 'poems.json';
   fetch(url)
