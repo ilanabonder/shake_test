@@ -27,24 +27,8 @@ function createHome(){
 }
 
 function createIntro(){
-  $("body").append("<h1>gogyōshi</h1><h2 id='intoText'></h2>");
-  typeWriter();
-}
-
-var i = 0;
-var txt = 'Is the freest among other Japanese five-line poetic forms. It incorporates no syllabic or line-breaks and no rhyme scheme. One of the only rules is that it must have a title. ';
-var speed = 80;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("intoText").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-  if (i === 165){
-    setTimeout(shakePage, 3000);
-    once = true;
-  }
+  $("body").append("<h1>gogyōshi</h1><h2 id='intoText'>Is the freest among other Japanese five-line poetic forms. It incorporates no syllabic or line-breaks and no rhyme scheme. One of the only rules is that it must have a title.</h2>");
+  setTimeout(shakePage, 3000);
 }
 
 function shakePage(){
@@ -55,15 +39,15 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 50, // optional shake strength threshold
+    threshold: 15, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
 function listenToShake(){
   console.log('i am listening to the shake!')
   myShakeEvent.start()
-  window.addEventListener('shake', shakeEventDidOccur, false);
-//   shakeEventDidOccur();
+//   window.addEventListener('shake', shakeEventDidOccur, false);
+  shakeEventDidOccur();
 }
 
 let myNumbers = [];
