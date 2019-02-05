@@ -17,7 +17,7 @@ if (mobileCheck === true){
 }
 
 function createHome(){
-  $("body").append("<h2>five lines poem</h2>");
+  $("body").append("<h2>five5 lines poem</h2>");
   $("body").append("<h1>gogyoshi</h1>");
   $("body").append("<button id='btn1'>start</button>");
   $("#btn1").click(function(){
