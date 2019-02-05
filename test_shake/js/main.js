@@ -28,7 +28,7 @@ function createHome(){
 
 function createIntro(){
   $("body").append("<h1>gogyōshi</h1><h2 id='intoText'>Is the freest among other Japanese five-line poetic forms. It incorporates no syllabic or line-breaks and no rhyme scheme. One of the only rules is that it must have a title.</h2>");
-  setTimeout(shakePage, 3000);
+  setTimeout(shakePage, 4000);
 }
 
 function shakePage(){
@@ -39,7 +39,7 @@ function shakePage(){
 }
 
 let myShakeEvent = new Shake({
-    threshold: 150, // optional shake strength threshold
+    threshold: 50, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 
